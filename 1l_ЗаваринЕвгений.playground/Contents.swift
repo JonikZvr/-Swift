@@ -8,19 +8,15 @@ var a : Double = 1
 var b : Double = 2
 var c : Double = 1
 
-var Otv_1 : Double = 0
-var Otv_2 : Double = 0
-var D: Double = 0
+let d :Double = b*b - 4*a*c
 
-D = b*b - 4*a*c
-
-if (D > 0){
-    Otv_1 = (-b + sqrt(D))/(2*a)
-    Otv_2 = (-b - sqrt(D))/(2*a)
-    print(Otv_1, Otv_2)
-} else if (D == 0) {
-    Otv_1 = -b / (2*a)
-    print(Otv_1)
+if (d > 0){
+    let otv_1 = (-b + sqrt(d))/(2*a)
+    let otv_2 = (-b - sqrt(d))/(2*a)
+    print(otv_1, otv_2)
+} else if (d == 0) {
+    let otv_1 = -b / (2*a)
+    print(otv_1)
 } else {
     print("Уравнение не имеет действительных решений")
 }
@@ -31,22 +27,22 @@ if (D > 0){
 var a_2 : Double = 3 //Катет №1
 var b_2 : Double = 4 //Катет №2
 var c_2 : Double = 0
-var P : Double = 0
-var S : Double = 0
+var p : Double = 0
+var s : Double = 0
 
 c_2 = sqrt(a_2*a_2 + b_2*b_2)
-P = a_2 + b_2 + c_2
-S = (a_2 * b_2) / 2
+p = a_2 + b_2 + c_2
+s = (a_2 * b_2) / 2
 
-print("S=", S, "P=", P, "C_2=", c_2)
+print("S=", s, "P=", p, "C_2=", c_2)
 
 //Задача 3
 // Пользователь вводит сумму вклада в банк и годовой процент. Найти сумму вклада через 5 лет.
 
-var Sum : Double = 100000
-var Pro : Double = 10
-var Itog : Double = 0
+var sum : Double = 100000
+var pro : Double = 10
+var itog : Double = 0
 
-Itog = ((((Sum * (Pro / 100 + 1)) * (Pro / 100 + 1)) * (Pro / 100 + 1)) * (Pro / 100 + 1)) * (Pro / 100 + 1)
+itog = ((((sum * (pro / 100 + 1)) * (pro / 100 + 1)) * (pro / 100 + 1)) * (pro / 100 + 1)) * (pro / 100 + 1)
 
-print(Itog)
+print(itog)
