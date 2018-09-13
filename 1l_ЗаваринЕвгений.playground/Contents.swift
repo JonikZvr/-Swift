@@ -12,12 +12,13 @@ var Otv_1 : Double = 0
 var Otv_2 : Double = 0
 var D: Double = 0
 
-if (b*b - 4*a*c > 0){
-    D = sqrt(b*b - 4*a*c)
-    Otv_1 = (-b + D)/(2*a)
-    Otv_2 = (-b - D)/(2*a)
+D = b*b - 4*a*c
+
+if (D > 0){
+    Otv_1 = (-b + sqrt(D))/(2*a)
+    Otv_2 = (-b - sqrt(D))/(2*a)
     print(Otv_1, Otv_2)
-} else if (b*b - 4*a*c == 0) {
+} else if (D == 0) {
     Otv_1 = -b / (2*a)
     print(Otv_1)
 } else {
