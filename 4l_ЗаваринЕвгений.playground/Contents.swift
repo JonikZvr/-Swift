@@ -24,6 +24,10 @@ enum HatchState {
     case open, close
 }
 
+enum TruckState {
+    case open, close
+}
+
 class Car {
     let mark: String
     let body: BodyType
@@ -91,16 +95,26 @@ class CarSport: Car {
 
 class CarTruck: Car {
     var BagVolume: Int
-    init(color: UIColor, mp3: Bool, transmission: Transmission, km: Double, doorState: DoorState, mark: String, body: BodyType, navi: Bool, year: Int, Enj: EnjState, Window: WindowState, space: Double, BagVolume: Int) {
+    var truckState: TruckState
+    init(color: UIColor, mp3: Bool, transmission: Transmission, km: Double, doorState: DoorState, mark: String, body: BodyType, navi: Bool, year: Int, Enj: EnjState, Window: WindowState, space: Double, BagVolume: Int, truckState: TruckState) {
         self.BagVolume = BagVolume
+        self.truckState = truckState
         super.init(color: color, mp3: mp3, transmission: transmission, km: km, doorState: doorState, mark: mark, body: body, navi: navi, year: year, Enj: Enj, Window: Window, space: space)
+    }
+    func openTruck() {
+        truckState = .open
+    }
+    func closeTruck() {
+        truckState = .close
     }
 }
 
 
 var smallCar = CarSport(color: .blue, mp3: true, transmission: .auto, km: 0, doorState: .close, mark: "Audi", body: .small, navi: true, year: 2018, Enj: .off, Window: .close, space: 600, hatchState: .open)
-var truck = CarTruck(color: .green, mp3: true, transmission: .auto, km: 0, doorState: .close, mark: "Volvo", body: .big, navi: false, year: 2015, Enj: .off, Window: .close, space: 12000, BagVolume: 500000)
+var truck = CarTruck(color: .green, mp3: true, transmission: .auto, km: 0, doorState: .close, mark: "Volvo", body: .big, navi: false, year: 2015, Enj: .off, Window: .close, space: 12000, BagVolume: 500000, truckState: .close)
 
 smallCar.Enj = .on
 smallCar.openDoor()
 truck.openWindow()
+truck.openTruck()
+smallCar.openHatch()
